@@ -1,0 +1,8 @@
+1. 读取tickets.json、bulk_rules.json和selection_cases.csv，按case_id和ticket_id整理场景目标。
+2. 在playwright.config.ts中设置Chromium项目、本地webServer、动态TICKET_QUEUE_PORT和有限超时。
+3. 使用page.route接管工单、规则和bulk-action接口，并保存每次请求的action与ticket_ids。
+4. 通过getByTestId按ticket_id逐窗滚动，读取range label、aria-rowindex、checkbox和aria-disabled。
+5. 对可处理工单执行check并跨窗口复核checked，对禁用工单核对disabled且不触发选择。
+6. 点击场景对应的批量按钮，核对route请求、status、assignee、snackbar和selected counter。
+7. 按audit_clock推进页面时间，通过getByRole定位Undo assignment并恢复动作前状态。
+8. 从本次浏览器断言和请求记录写出选择矩阵、撤销时序与ARIA合同报告。
