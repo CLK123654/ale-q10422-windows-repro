@@ -1,4 +1,7 @@
+总分100分
+
 检查项：交付路径与浏览器入口
+分值：10分
 标准答案：题面声明的配置、测试和三份报告均可读取，npm run process启动Playwright与Chromium
 关键字段：output/playwright.config.ts；output/tests/ticket_queue_virtual_list.spec.ts；output/reports；Chromium项目；webServer
 容差：配置与测试内部组织可以不同，声明的交付路径不设容差
@@ -10,6 +13,7 @@
 所属层级：L1任务指令遵循层
 
 检查项：虚拟窗口与工单身份
+分值：20分
 标准答案：窗口大小和缓冲上限来自bulk_rules.json，目标工单按ticket_id滚动定位，range label与aria-rowindex反映当前位置
 关键字段：ticket_id；row_position；visible_window_size；rendered_row_ceiling；scroll_window；aria-rowindex
 容差：窗口范围按输入规则精确计算，DOM节点顺序只按业务主键解释
@@ -21,6 +25,7 @@
 所属层级：L8运行验证或可执行行为层
 
 检查项：跨窗口选择与禁用保护
+分值：20分
 标准答案：可处理工单跨窗口后仍保持选中，non_selectable_statuses中的工单同时具有disabled与aria-disabled，且不进入批量请求
 关键字段：ticket_id；status；selectable；selected_before_action；request_included；aria-disabled；aria-checked
 容差：状态枚举和布尔结果精确比较，记录按case_id与ticket_id组成的业务主键无序比较
@@ -32,6 +37,7 @@
 所属层级：L6领域计算与专业规则层
 
 检查项：批量请求与动作结果
+分值：18分
 标准答案：每个场景只发出对应action的批量请求，ticket_ids保持场景中可处理工单的顺序，页面结果采用actions中的status、assignee和snackbar
 关键字段：case_id；action；ticket_ids；final_status；final_assignee；snackbar
 容差：请求字段与枚举精确比较，snackbar按规则文本比较；场景记录顺序不计分
@@ -43,6 +49,7 @@
 所属层级：L5多源关联与字段一致性层
 
 检查项：撤销时钟与状态恢复
+分值：15分
 标准答案：expected_result为undone的场景按audit_clock推进时间并点击Undo assignment，目标工单恢复输入中的status和assignee，选择计数归零
 关键字段：expected_result；fixed_now_utc；undo_click_delay_ms；undo_timeout_ms；undo_clicked；clicked_after_ms；restored_ticket_count
 容差：时刻按毫秒精确比较，空的点击时刻保持空值，状态与分配人精确比较
@@ -54,6 +61,7 @@
 所属层级：L8运行验证或可执行行为层
 
 检查项：可访问定位与合同报告
+分值：10分
 标准答案：测试使用角色或data-testid定位列表、工单、计数、提示和撤销按钮，报告记录实际role、ARIA属性、可访问名称及窗口文本
 关键字段：assertion_key；selector_or_name；expected_property；expected_value；evidence
 容差：可使用等价稳定定位器，ARIA属性和值按DOM精确比较
@@ -65,6 +73,7 @@
 所属层级：L2软件或工具操作层
 
 检查项：输入保全与本地访问边界
+分值：7分
 标准答案：测试只读取app、fixtures和规则，正式运行仅访问本机页面及被page.route接管的接口
 关键字段：输入文件内容；页面请求地址；报告写入路径
 容差：回环端口可以变化，业务输入内容不设容差

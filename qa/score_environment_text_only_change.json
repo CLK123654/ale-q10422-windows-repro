@@ -1,0 +1,75 @@
+{
+  "schema_version": 1,
+  "task_id": "10422",
+  "change_scope": "score_environment_text_only_change",
+  "result": "PASS",
+  "score": {
+    "total_declared": 100,
+    "item_count": 7,
+    "items": [
+      {
+        "name": "交付路径与浏览器入口",
+        "points": 10
+      },
+      {
+        "name": "虚拟窗口与工单身份",
+        "points": 20
+      },
+      {
+        "name": "跨窗口选择与禁用保护",
+        "points": 20
+      },
+      {
+        "name": "批量请求与动作结果",
+        "points": 18
+      },
+      {
+        "name": "撤销时钟与状态恢复",
+        "points": 15
+      },
+      {
+        "name": "可访问定位与合同报告",
+        "points": 10
+      },
+      {
+        "name": "输入保全与本地访问边界",
+        "points": 7
+      }
+    ],
+    "points_sum": 100
+  },
+  "prompt_coverage_review": {
+    "completed": true,
+    "semantic_change_required": false,
+    "conclusion": "浏览器入口、虚拟窗口、跨窗选择、批量请求、撤销、可访问定位和输入边界均有对应评分项"
+  },
+  "environment_coverage": {
+    "operating_system": true,
+    "primary_software_and_version": true,
+    "code_execution_dependency": true,
+    "cpu": true,
+    "gpu": true,
+    "disk": true,
+    "timeout": true,
+    "license_removed": true
+  },
+  "environment_license_text_present": false,
+  "field_name_count": 17,
+  "ale_csv_column_count": 19,
+  "attachment_sha256_before": {
+    "输入数据包.zip": "5be98ce239758ebbc4158fd6cafe96f518c6f81c258bd364d3ca65ec87912924",
+    "reference.zip": "40170f06c018a167d5d6b627b36cb2b984e75c49ad12f90f989ed683d20a5a13",
+    "关键标准答案.xlsx": "901aca09512862d572a610d2a1e699b193add20ad5472c86d203a54ec25636db",
+    "任务规格转化.xlsx": "f04045392d5cd70cfcfa486a824141add0af51f9c41486e620dccdad42ca244f"
+  },
+  "attachment_sha256_after": {
+    "输入数据包.zip": "5be98ce239758ebbc4158fd6cafe96f518c6f81c258bd364d3ca65ec87912924",
+    "reference.zip": "40170f06c018a167d5d6b627b36cb2b984e75c49ad12f90f989ed683d20a5a13",
+    "关键标准答案.xlsx": "901aca09512862d572a610d2a1e699b193add20ad5472c86d203a54ec25636db",
+    "任务规格转化.xlsx": "f04045392d5cd70cfcfa486a824141add0af51f9c41486e620dccdad42ca244f"
+  },
+  "attachments_unchanged": true,
+  "windows_rerun_required": false,
+  "lark_called": false,
+  "online_ai_detection_used_as_conclusion": false
+}
