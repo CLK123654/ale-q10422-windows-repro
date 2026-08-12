@@ -1,0 +1,76 @@
+检查项：交付路径与浏览器入口
+标准答案：题面声明的配置、测试和三份报告均可读取，npm run process启动Playwright与Chromium
+关键字段：output/playwright.config.ts；output/tests/ticket_queue_virtual_list.spec.ts；output/reports；Chromium项目；webServer
+容差：配置与测试内部组织可以不同，声明的交付路径不设容差
+失败边界：核心交付缺失、命令非零结束，或没有启动真实Chromium
+可观察证据：文件清单、Playwright运行日志、浏览器项目和本次报告
+客观硬性标准：全部交付路径存在，业务场景由Chromium执行
+阈值：全部满足
+优先级：Gate项
+所属层级：L1任务指令遵循层
+
+检查项：虚拟窗口与工单身份
+标准答案：窗口大小和缓冲上限来自bulk_rules.json，目标工单按ticket_id滚动定位，range label与aria-rowindex反映当前位置
+关键字段：ticket_id；row_position；visible_window_size；rendered_row_ceiling；scroll_window；aria-rowindex
+容差：窗口范围按输入规则精确计算，DOM节点顺序只按业务主键解释
+失败边界：按坐标、nth或可见行序号定位，目标身份错位，或渲染行数超过规则上限
+可观察证据：fixtures、真实DOM属性、range label和selection_matrix.csv
+客观硬性标准：每个场景目标都能按ticket_id关联输入与浏览器观察值
+阈值：全部目标满足
+优先级：Gate项
+所属层级：L8运行验证或可执行行为层
+
+检查项：跨窗口选择与禁用保护
+标准答案：可处理工单跨窗口后仍保持选中，non_selectable_statuses中的工单同时具有disabled与aria-disabled，且不进入批量请求
+关键字段：ticket_id；status；selectable；selected_before_action；request_included；aria-disabled；aria-checked
+容差：状态枚举和布尔结果精确比较，记录按case_id与ticket_id组成的业务主键无序比较
+失败边界：滚动后选择丢失、禁用工单可选或进入请求，或页面计数与选中集合不一致
+可观察证据：bulk_rules.json、checkbox断言、selected counter、route请求和selection_matrix.csv
+客观硬性标准：每条记录的可选性可由状态规则复算，请求只包含当前场景的可处理工单
+阈值：全部场景满足
+优先级：高权重项
+所属层级：L6领域计算与专业规则层
+
+检查项：批量请求与动作结果
+标准答案：每个场景只发出对应action的批量请求，ticket_ids保持场景中可处理工单的顺序，页面结果采用actions中的status、assignee和snackbar
+关键字段：case_id；action；ticket_ids；final_status；final_assignee；snackbar
+容差：请求字段与枚举精确比较，snackbar按规则文本比较；场景记录顺序不计分
+失败边界：请求漏发或多发、禁用工单混入、动作错配，或结果不是本次规则返回值
+可观察证据：selection_cases.csv、bulk_rules.json、Playwright route请求、DOM和两份业务报告
+客观硬性标准：请求及页面结果都能按case_id、action与ticket_id回查输入
+阈值：全部场景满足
+优先级：高权重项
+所属层级：L5多源关联与字段一致性层
+
+检查项：撤销时钟与状态恢复
+标准答案：expected_result为undone的场景按audit_clock推进时间并点击Undo assignment，目标工单恢复输入中的status和assignee，选择计数归零
+关键字段：expected_result；fixed_now_utc；undo_click_delay_ms；undo_timeout_ms；undo_clicked；clicked_after_ms；restored_ticket_count
+容差：时刻按毫秒精确比较，空的点击时刻保持空值，状态与分配人精确比较
+失败边界：依赖系统当前时间、固定等待代替业务时钟、撤销目标未恢复，或选择计数未清零
+可观察证据：浏览器时钟、按钮点击、工单DOM与undo_timing_report.csv
+客观硬性标准：撤销记录可按case_id关联场景和输入状态，点击延迟不超过规则超时
+阈值：所有撤销场景满足
+优先级：高权重项
+所属层级：L8运行验证或可执行行为层
+
+检查项：可访问定位与合同报告
+标准答案：测试使用角色或data-testid定位列表、工单、计数、提示和撤销按钮，报告记录实际role、ARIA属性、可访问名称及窗口文本
+关键字段：assertion_key；selector_or_name；expected_property；expected_value；evidence
+容差：可使用等价稳定定位器，ARIA属性和值按DOM精确比较
+失败边界：依赖坐标、临时样式类或可见行下标，缺少禁用和选中状态检查，或报告不是实际DOM观察值
+可观察证据：Playwright locator、DOM断言和aria_contract_report.csv
+客观硬性标准：报告主键唯一，每条记录都能定位到测试中的浏览器观察
+阈值：公开可访问性合同全部覆盖
+优先级：普通项
+所属层级：L2软件或工具操作层
+
+检查项：输入保全与本地访问边界
+标准答案：测试只读取app、fixtures和规则，正式运行仅访问本机页面及被page.route接管的接口
+关键字段：输入文件内容；页面请求地址；报告写入路径
+容差：回环端口可以变化，业务输入内容不设容差
+失败边界：改写业务输入、连接真实客服或外部API，或用已有报告代替浏览器观察
+可观察证据：请求日志、输入文件和报告生成位置
+客观硬性标准：输入保持原样，三份报告来自本次本地浏览器操作
+阈值：全部满足
+优先级：普通项
+所属层级：L3输入数据导入与完整性层
