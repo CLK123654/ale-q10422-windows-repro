@@ -1,5 +1,3 @@
 # 客服工单虚拟列表的Playwright批量操作回归
 
-本仓库保存任务正文、四份附件及Windows环境下的独立检查程序。主软件为Playwright1.62.x与Chromium。
-
-候选材料位于task和artifacts目录。verification与qa目录只保存仓库检查材料，不属于任务交付要求。
+任务使用Playwright检查虚拟列表中的跨窗口选择、批量操作、撤销时序和可访问性状态，并整理三份业务报告。

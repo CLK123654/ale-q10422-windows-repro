@@ -1,7 +1,7 @@
-支持64位Windows11、macOS13及主流Linux。主软件为Playwright1.62.x并使用对应Chromium，Node.js20或更高版本负责启动入口。Playwright必须实际执行webServer、Chromium页面加载、route拦截、locator、滚动、checkbox、按钮点击和DOM断言；静态HTML解析或手写报告不能替代浏览器行为。
+操作系统：Windows11、macOS或主流64位Linux。
 
-辅助工具为PowerShell或系统终端，以及CSV和JSON查看器。依赖与Chromium安装阶段需要联网访问npm及Playwright软件源，业务运行只访问本机回环服务，不需要客服系统账号或云端密钥。输入材料为脱敏演练数据。
+主软件为Playwright1.62系列及配套Chromium，Node.js20或更高版本用于启动入口。Playwright需实际运行webServer、页面加载、route拦截、locator、滚动、checkbox、按钮点击和DOM断言；静态HTML解析或手写报告不能代替浏览器行为。
 
-建议使用双核CPU、2GB内存和500MB可写磁盘，不需要GPU。执行账号需读取app、fixtures、starter、scripts与tools目录，可写output并绑定本机回环端口。单次入口最长运行120秒。
+PowerShell或系统终端用于运行任务，常见CSV和JSON工具可用于阅读结果。执行账户需能读取app、fixtures、starter、scripts和tools目录，写入output，并绑定一个本机回环端口。业务运行只访问本机页面，不需要客服系统账号或云端密钥。
 
-本题容易出现虚拟DOM换窗后定位失效、禁用状态只看输入未看DOM、选中集合跨窗口丢失、route请求与页面报告脱节，以及业务时钟没有进入页面。Windows入口采用跨平台路径和动态端口。
+应使用能够稳定运行Chromium的常规开发机，对CPU没有特殊要求，也不需要独立GPU。磁盘需能容纳Node.js依赖、Chromium、输入页面、测试文件和三份报告。入口应设置有限超时，覆盖浏览器启动、页面交互和报告写出，并避免页面异常造成无限等待。
