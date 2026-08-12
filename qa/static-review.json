@@ -19,6 +19,14 @@
   "task_spec_column_count": 2,
   "task_asset_id": "playwright_ticket_queue_virtual_bulk_undo",
   "task_asset_id_valid": true,
+  "main_software_consistency": {
+    "task_fields": "Playwright",
+    "task_specification": "Playwright",
+    "title_mentions_playwright": true,
+    "prompt_mentions_playwright": true,
+    "environment_mentions_playwright": true,
+    "work_record_mentions_playwright": true
+  },
   "forbidden_spec_labels": [],
   "declared_delivery_paths": [
     "output/playwright.config.ts",
