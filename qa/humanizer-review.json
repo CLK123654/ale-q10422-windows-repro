@@ -1,0 +1,59 @@
+{
+  "schema_version": 1,
+  "skill": "humanizer-zh",
+  "result": "PASS",
+  "reviewed_scopes": [
+    "任务名称",
+    "任务概要",
+    "任务prompt",
+    "关键动作",
+    "评分表",
+    "环境依赖",
+    "软件步骤",
+    "输入材料中的自然语言",
+    "Reference中的用户可见文字",
+    "关键标准答案工作簿全部自然语言",
+    "任务规格工作簿全部自然语言"
+  ],
+  "scores": {
+    "直接性": 10,
+    "节奏": 9,
+    "信任度": 10,
+    "真实性": 9,
+    "精炼度": 9,
+    "total": 47
+  },
+  "score": {
+    "directness": 10,
+    "rhythm": 9,
+    "trust": 10,
+    "authenticity": 9,
+    "concision": 9,
+    "total": 47,
+    "maximum": 50
+  },
+  "minimum_total": 45,
+  "notes": [
+    "题面从工单虚拟列表的实际发布风险切入，直接交代前端工程师和发布负责人的工作关系。",
+    "窗口参数、禁用状态、批量动作和撤销时钟均来自可见输入，没有模糊引用或无来源数字。",
+    "浏览器操作按工单身份、跨窗口选择、请求捕获、撤销恢复和报告交付连续展开。",
+    "评分项只保留业务规则、字段、容差与定位方式，精确业务结果留在五页答案。",
+    "已删除回归套话、内部过程词、否定式兼容排比和数据真实性标签。"
+  ],
+  "online_ai_detection_used_as_conclusion": false,
+  "reviewed_artifacts_sha256": {
+    "任务名称.txt": "4ebc959ee20bb4ef2f454838550ebfb014ba6106693192cb521b96f5b4be7b99",
+    "任务概要.txt": "2eb4a9fbcab9ecc6a824b391494a8fbb1cbd747f24ae959c3da9768892c0a29f",
+    "任务prompt.txt": "b7b2c4ae5a8e885869993afb8737665fdd678b577aadb6f5fdab14c6abcf1dd7",
+    "关键动作.txt": "b4454e91da57b9503374207ac01af3ded489d873bc0d346dc0473a854eb5732a",
+    "评分表.txt": "c459220b3c13b0493e606e8c898b64818d43a8d4196d8b96f00029943a93b571",
+    "环境依赖.txt": "343a476a4fc0d01f60bb1815318f6d98a059b9cdecd404b5e8b95007feeea452",
+    "相关专业软件的关键步骤.txt": "2e0f748623965783f74fa134e7a27f54027ea5884dc981ab69ed4e95127248bf",
+    "task_fields.json": "bef5f0c36d561dabb8f644850749710d8367384aee70b384b4e1611fad9ed6f9",
+    "ALE-专家数据作业表.csv": "867dcd8f30513891b305f0874904a1dcae08a37a66a25f2ff7027d87bee092dc",
+    "输入数据包.zip": "f5bc8c4badb45e592fe3601476b5b1d481d69928406fc1d1b572ed136c828f03",
+    "reference.zip": "40170f06c018a167d5d6b627b36cb2b984e75c49ad12f90f989ed683d20a5a13",
+    "关键标准答案.xlsx": "6c58ae0c7f9e44af5b7b0054a30c7bb3f5ce4fd19c85f55f0f55f717c84aa68f",
+    "任务规格转化.xlsx": "0446180f4ac72d3e1c2d464e0b3825f8d77a750d55e10d3526b0c9c4d99c6cd1"
+  }
+}

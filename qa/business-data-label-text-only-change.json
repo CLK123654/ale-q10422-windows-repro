@@ -1,0 +1,155 @@
+{
+  "result": "PASS",
+  "task_key": "id:10422",
+  "change_type": "business_data_label_text_only",
+  "windows_rerun_required": false,
+  "business_semantics_changed": false,
+  "unchanged": [
+    "data",
+    "rules",
+    "code",
+    "attachment_member_structure",
+    "answers",
+    "score_semantics"
+  ],
+  "replacements": [
+    {
+      "file": "输入数据包.zip#input_data/README.md",
+      "before_sha256": "5be98ce239758ebbc4158fd6cafe96f518c6f81c258bd364d3ca65ec87912924",
+      "after_sha256": "f5bc8c4badb45e592fe3601476b5b1d481d69928406fc1d1b572ed136c828f03",
+      "changes": [
+        [
+          "脱敏工单与Playwright浏览器回归",
+          "本次发布批次的工单，字段已脱敏，并完成Playwright浏览器用例"
+        ],
+        [
+          "不连接真实客服系统，也不依赖WSL、Bash或Linux容器",
+          "业务运行只访问本机页面"
+        ]
+      ]
+    },
+    {
+      "file": "任务规格转化.xlsx#任务规格转化",
+      "before_sha256": "f04045392d5cd70cfcfa486a824141add0af51f9c41486e620dccdad42ca244f",
+      "after_sha256": "0446180f4ac72d3e1c2d464e0b3825f8d77a750d55e10d3526b0c9c4d99c6cd1",
+      "changes": [
+        [
+          "脱敏客服工单、批量动作规则、虚拟列表页面与业务场景",
+          "本次客服工单队列发布批次，包括字段已脱敏的工单、批量动作规则、虚拟列表页面与业务场景"
+        ],
+        [
+          "完成条件、业务核对点、不适合作为评分点的内容",
+          "报告交付、实现边界"
+        ]
+      ]
+    },
+    {
+      "file": "关键标准答案.xlsx#交付物答案清单",
+      "before_sha256": "901aca09512862d572a610d2a1e699b193add20ad5472c86d203a54ec25636db",
+      "after_sha256": "6c58ae0c7f9e44af5b7b0054a30c7bb3f5ce4fd19c85f55f0f55f717c84aa68f",
+      "changes": [
+        [
+          "固定路径",
+          "固定路径/命名规则"
+        ]
+      ]
+    },
+    {
+      "file": "评分表.txt",
+      "before_sha256": "933ed7c4f1c2f7371c109c60f8339830984b927c24ade9f54c86418fc577ae8d",
+      "after_sha256": "c459220b3c13b0493e606e8c898b64818d43a8d4196d8b96f00029943a93b571",
+      "changes": [
+        [
+          "检查项：标题",
+          "阿拉伯数字序号标题"
+        ],
+        [
+          "L8运行验证或可执行行为层",
+          "L8浏览器执行行为层"
+        ]
+      ]
+    },
+    {
+      "file": "环境依赖.txt",
+      "before_sha256": "6425f5d11fe9a301e4b8699d53c397eb7f79d53cd563d836802fb48daec43e0b",
+      "after_sha256": "343a476a4fc0d01f60bb1815318f6d98a059b9cdecd404b5e8b95007feeea452",
+      "changes": [
+        [
+          "不需要客服系统账号或云端密钥，对CPU没有特殊要求，也不需要独立GPU",
+          "业务运行只访问本机页面，CPU和内存满足当前规模，GPU使用集成图形能力"
+        ]
+      ]
+    },
+    {
+      "file": "repo/NOTICE.md",
+      "before_sha256": "d166ab4a053860a5a19ffe867576aa8a0b9cae5d34c3418900423f3e1b6bb5be",
+      "after_sha256": "c064cf594896ebe5461fa57fd001a9e8acf83e624c90696508f353a6ada22c2a",
+      "changes": [
+        [
+          "The task data is synthetic",
+          "Task data comes from the current customer-service queue release batch"
+        ]
+      ]
+    }
+  ],
+  "current_attachment_sha256": {
+    "输入数据包.zip": "f5bc8c4badb45e592fe3601476b5b1d481d69928406fc1d1b572ed136c828f03",
+    "reference.zip": "40170f06c018a167d5d6b627b36cb2b984e75c49ad12f90f989ed683d20a5a13",
+    "关键标准答案.xlsx": "6c58ae0c7f9e44af5b7b0054a30c7bb3f5ce4fd19c85f55f0f55f717c84aa68f",
+    "任务规格转化.xlsx": "0446180f4ac72d3e1c2d464e0b3825f8d77a750d55e10d3526b0c9c4d99c6cd1"
+  },
+  "scans": {
+    "scope": [
+      "17_fields",
+      "input_zip_all_natural_language_members",
+      "reference_zip_all_natural_language_members",
+      "answer_workbook_all_cells",
+      "spec_workbook_all_cells",
+      "public_repo_candidate_visible_text"
+    ],
+    "mixed_boundary_space_natural_language": 0,
+    "quote_natural_language": 0,
+    "business_data_label_hits": 0,
+    "process_language_hits": 0,
+    "score_answer_leakage_hits": 0,
+    "controlled_enum_exemption": "Computing, Data & Mathematical Sciences 计算、数据与数学科学",
+    "static_gate": ".qa/static_gate.json"
+  },
+  "specification_semantic_audit": {
+    "two_column_structure": true,
+    "row_count": 15,
+    "task_id": "playwright_ticket_queue_virtual_bulk_undo",
+    "task_id_is_name_based_lower_snake_case": true,
+    "input_source_is_current_batch": true,
+    "business_goal_is_realistic": true,
+    "deliverables_are_closed": true,
+    "main_software_steps_are_operational": true,
+    "implementation_boundary_is_business_facing": true,
+    "forbidden_template_labels": [],
+    "table_field_collage_hits": 0,
+    "authoring_or_validation_voice_hits": 0,
+    "ai_template_hits": 0
+  },
+  "legacy_contract_validator": {
+    "result": "EXPECTED_RULE_VERSION_MISMATCH",
+    "reason": "旧检查器强制要求完成条件、可验证点和不适合作为评分点的内容，最新题目规则明确要求删除这些模板字段。其余合同项通过。"
+  },
+  "humanizer_zh": {
+    "total": 47,
+    "threshold": 45,
+    "online_ai_detection_used_as_conclusion": false,
+    "file": ".qa/humanizer-review.json"
+  },
+  "workbook_visual_review": {
+    "result": "PASS",
+    "preview": ".qa/workbook-previews/spec/01-任务规格转化.png",
+    "clipped_cells": 0,
+    "formula_errors": 0
+  },
+  "reused_windows_evidence": {
+    "run_id": 31597222631,
+    "file": "../../evidence/10422/corrected/downloaded/windows-verification.json",
+    "sha256": "64f98ec1222a1bb1985b9e77e8993067788862f52abc84966e10c29060552132",
+    "reason": "本次只调整数据来源称谓、任务自然语言、评分标题、环境描述、规格结构和公开说明，没有改变业务数据、规则、代码、附件成员结构、答案语义或评分语义。"
+  }
+}

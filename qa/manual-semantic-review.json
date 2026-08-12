@@ -1,0 +1,41 @@
+{
+  "schema_version": 1,
+  "task_key": "id:10422",
+  "result": "PASS",
+  "review_method": "human_semantic_review",
+  "online_ai_detection_used_as_conclusion": false,
+  "business_role": "负责客服工单虚拟列表发布核查的前端工程师",
+  "downstream_consumers": [
+    "发布负责人使用三份报告判断上线风险",
+    "客服工具团队使用选择矩阵核对批量操作",
+    "前端团队使用ARIA合同报告检查可访问属性"
+  ],
+  "consumed_inputs": [
+    "tickets.json中的工单事实",
+    "bulk_rules.json中的窗口、禁用、动作和撤销规则",
+    "selection_cases.csv中的业务场景",
+    "app目录中的虚拟列表页面"
+  ],
+  "continuous_work_chain": [
+    "读取工单、规则和场景",
+    "配置Chromium与本地接口路由",
+    "按ticket_id跨窗口定位并维护选择",
+    "保护禁用工单并捕获批量请求",
+    "推进业务时钟并完成撤销恢复",
+    "整理选择、撤销与ARIA报告"
+  ],
+  "main_software_necessity": "Playwright需要真实运行Chromium，执行滚动、重新定位、选择、按钮点击、焦点与DOM属性读取以及请求捕获；静态HTML解析不能替代。",
+  "hard_number_sources": [
+    "窗口大小、渲染上限、撤销延迟和超时来自bulk_rules.json",
+    "场景数量与目标工单来自selection_cases.csv",
+    "软件版本来自输入锁文件"
+  ],
+  "reference_integrity": "题面只引用输入包内实际存在的页面、规则、工单和场景文件，没有模糊引用或伪引用。",
+  "closure": "Prompt声明的配置、用例和三份报告均在Reference、五页答案与评分表中逐项对应。",
+  "reasoning_continuity": "规则定义窗口与禁用边界，场景决定选中集合和动作，浏览器请求产生页面结果，撤销时钟恢复工单状态，三份报告记录同一链条。",
+  "hallucination_or_unsupported_claims": [],
+  "unreasonable_requirements": [],
+  "pseudo_citations": [],
+  "reasoning_gaps": [],
+  "candidate_answer_leakage": []
+}

@@ -2,6 +2,6 @@
 
 主软件为Playwright1.62系列及配套Chromium，Node.js20或更高版本用于启动入口。Playwright需实际运行webServer、页面加载、route拦截、locator、滚动、checkbox、按钮点击和DOM断言；静态HTML解析或手写报告不能代替浏览器行为。
 
-PowerShell或系统终端用于运行任务，常见CSV和JSON工具可用于阅读结果。执行账户需能读取app、fixtures、starter、scripts和tools目录，写入output，并绑定一个本机回环端口。业务运行只访问本机页面，不需要客服系统账号或云端密钥。
+PowerShell或系统终端用于运行任务，常见CSV和JSON工具可用于阅读结果。执行账户需能读取app、fixtures、starter、scripts和tools目录，写入output，并绑定一个本机回环端口。业务运行只访问本机页面。执行时无需客服系统账号或云端密钥。
 
-应使用能够稳定运行Chromium的常规开发机，对CPU没有特殊要求，也不需要独立GPU。磁盘需能容纳Node.js依赖、Chromium、输入页面、测试文件和三份报告。入口应设置有限超时，覆盖浏览器启动、页面交互和报告写出，并避免页面异常造成无限等待。
+应使用能够稳定运行Chromium的常规开发机，CPU和内存满足当前页面与场景规模即可，GPU使用集成图形能力。磁盘需能容纳Node.js依赖、Chromium、输入页面、测试文件和三份报告。入口应设置有限超时，覆盖浏览器启动、页面交互和报告写出，并避免页面异常造成无限等待。
