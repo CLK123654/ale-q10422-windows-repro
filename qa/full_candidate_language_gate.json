@@ -1,0 +1,15 @@
+{
+  "result": "PASS",
+  "task_key": "id:10422",
+  "source_count": 168,
+  "violations": [],
+  "controlled_enum_exemption": "Computing, Data & Mathematical Sciences 计算、数据与数学科学",
+  "scopes": [
+    "17_fields",
+    "input_zip_all_text_members",
+    "reference_zip_all_text_members",
+    "answer_workbook_all_cells",
+    "spec_workbook_all_cells",
+    "public_repo_candidate_text"
+  ]
+}

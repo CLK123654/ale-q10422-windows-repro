@@ -6,4 +6,4 @@
 
 批量请求的action和ticket_ids由场景及规则共同决定。响应后的status、assignee与snackbar从本次规则读取。需要撤销的场景使用audit_clock和undo_click_delay_ms推进业务时钟，再通过可访问名称点击Undo assignment，确认工单恢复到动作前状态。selected counter、ticket list、range label、snackbar和undo button使用角色或data-testid定位，不依赖坐标和可见行序号。
 
-把成品配置和测试分别保存到output/playwright.config.ts和output/tests/ticket_queue_virtual_list.spec.ts。从input_data运行npm run process，交付reports/selection_matrix.csv、reports/undo_timing_report.csv和reports/aria_contract_report.csv。三份报告记录本次Chromium页面、route请求和DOM属性观察值。业务运行只访问本机回环地址，不连接真实客服系统。
+把成品配置和测试分别保存到output/playwright.config.ts和output/tests/ticket_queue_virtual_list.spec.ts。从input_data运行npm run process，交付reports/selection_matrix.csv、reports/undo_timing_report.csv和reports/aria_contract_report.csv。三份报告记录本次Chromium页面、route请求和DOM属性观察值，业务运行使用本机工单页面与接口。

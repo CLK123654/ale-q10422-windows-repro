@@ -1,0 +1,51 @@
+{
+  "schema_version": 1,
+  "result": "PASS",
+  "scanned_sources": 180,
+  "violations": [],
+  "candidate_score_answer_leakage": [],
+  "input_answer_control_hits": [],
+  "answer_sheets": [
+    "交付物答案清单",
+    "固定字段答案",
+    "固定集合答案",
+    "固定数值答案",
+    "允许变体答案"
+  ],
+  "specification_sheets": [
+    "任务规格转化"
+  ],
+  "task_spec_row_count": 17,
+  "task_spec_column_count": 2,
+  "task_asset_id": "playwright_ticket_queue_virtual_bulk_undo",
+  "task_asset_id_valid": true,
+  "main_software_consistency": {
+    "task_fields": "Playwright",
+    "task_specification": "Playwright",
+    "title_mentions_playwright": true,
+    "prompt_mentions_playwright": true,
+    "environment_mentions_playwright": true,
+    "work_record_mentions_playwright": true
+  },
+  "forbidden_spec_labels": [],
+  "declared_delivery_paths": [
+    "output/playwright.config.ts",
+    "output/tests/ticket_queue_virtual_list.spec.ts",
+    "output/reports/selection_matrix.csv",
+    "output/reports/undo_timing_report.csv",
+    "output/reports/aria_contract_report.csv"
+  ],
+  "reference_paths": [
+    "output/playwright.config.ts",
+    "output/reports/aria_contract_report.csv",
+    "output/reports/selection_matrix.csv",
+    "output/reports/undo_timing_report.csv",
+    "output/tests/ticket_queue_virtual_list.spec.ts"
+  ],
+  "undeclared_reference_paths": [],
+  "empty_delivery_paths": [],
+  "forbidden_input_token_hits": [],
+  "candidate_validation_artifact_present": false,
+  "humanizer_score": 47,
+  "online_ai_detector_used_as_conclusion": false
+}

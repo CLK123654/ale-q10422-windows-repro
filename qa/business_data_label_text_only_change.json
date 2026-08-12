@@ -1,0 +1,55 @@
+{
+  "result": "PASS",
+  "task_key": "id:10422",
+  "change_type": "business_data_label_text_only",
+  "windows_rerun_required": false,
+  "business_semantics_changed": false,
+  "unchanged": [
+    "data",
+    "rules",
+    "code",
+    "attachment_member_structure",
+    "answers",
+    "score_semantics"
+  ],
+  "current_attachment_sha256": {
+    "输入数据包.zip": "f5bc8c4badb45e592fe3601476b5b1d481d69928406fc1d1b572ed136c828f03",
+    "reference.zip": "40170f06c018a167d5d6b627b36cb2b984e75c49ad12f90f989ed683d20a5a13",
+    "关键标准答案.xlsx": "6c58ae0c7f9e44af5b7b0054a30c7bb3f5ce4fd19c85f55f0f55f717c84aa68f",
+    "任务规格转化.xlsx": "e77477d0a4f20eeec449d80132766b384c949d507c77e4a9af5aa20315839405"
+  },
+  "scans": {
+    "source_count": 168,
+    "mixed_boundary_space_natural_language": 0,
+    "quote_natural_language": 0,
+    "business_data_label_hits": 0,
+    "process_language_hits": 0
+  },
+  "replacements": [
+    {
+      "file": "输入数据包.zip#input_data/README.md",
+      "summary": "将演练材料改为本次客服工单队列发布业务材料及已脱敏字段"
+    },
+    {
+      "file": "环境依赖",
+      "summary": "改为通用答题环境，删除许可、验证机器、固定资源和固定时长"
+    },
+    {
+      "file": "任务规格转化.xlsx",
+      "summary": "实审业务输入、目标、交付、Playwright步骤、报告交接与实现边界"
+    },
+    {
+      "file": "任务prompt与评分表",
+      "summary": "把输入不变式验收口吻改为业务材料只读和本地访问边界，评分语义不变"
+    },
+    {
+      "file": "repo README与NOTICE",
+      "summary": "删除工作流和内部检查说明，改为答题入口与业务材料说明"
+    }
+  ],
+  "reused_windows_evidence": {
+    "run_id": 31609029133,
+    "file": "../../evidence/10422/corrected/downloaded/windows-verification.json",
+    "reason": "仅改变业务材料标签、通用环境描述、规格文字和同义的材料边界表述；数据、规则、代码、成员结构、答案和评分语义不变。"
+  }
+}
