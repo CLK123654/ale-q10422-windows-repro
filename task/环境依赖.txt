@@ -1,4 +1,4 @@
-操作系统：Windows11、macOS或主流64位Linux。
+操作系统： Windows11、macOS或主流64位Linux。
 
 主软件为Playwright1.62系列及配套Chromium，Node.js20或更高版本用于启动入口。Playwright需实际运行webServer、页面加载、route拦截、locator、滚动、checkbox、按钮点击和DOM断言；静态HTML解析或手写报告不能代替浏览器行为。
 
